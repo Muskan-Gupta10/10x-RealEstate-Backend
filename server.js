@@ -5,7 +5,8 @@ const mongoose=require("mongoose")
 const port=8081
 dotenv.config()
 app.use(express.json())
-mongoose.connect(process.env.MONGO_URI)
+let url="mongodb+srv://Real_Estate:Real_Estate@realestatedbcluster.3uk3nl1.mongodb.net/?retryWrites=true&w=majority"
+mongoose.connect(process.env.MONGO_URI || url) 
 mongoose.connection.on("connected",()=>{
     console.log("mongodb connected successfully")
 })
