@@ -1,0 +1,40 @@
+let mongoose = require("mongoose");
+
+let EverythingInOneSchema = mongoose.Schema({
+    length: {type: Number, required: true},
+    total_area: {type: Number, required: true},
+    no_of_bhk: {type: Number, required: true},
+    attached: {type: Boolean, required: true},
+    furnished: {type: Boolean, required: true},
+    lift: {type: Boolean, required: true},
+    facing: {type: String, required: true},
+    area_unit: {type: String, required: true},
+    no_of_floor: {type: Number, required: true},
+    western_toilet: {type: Boolean, required: true},
+    car_parking: {type: Boolean, required: true},
+    electricity: {type: String, required: true},
+    email: {type: String, required: true},
+    area: {type: String, required: true},
+    address: {type: String, required: true},
+    latitude: {type: Number, required: true},
+    city: {type: String, required: true},
+    pincode: {type: Number, required: true},
+    landmark: {type: String, required: true},
+    longitude: {type: Number, required: true},
+    name: {type: String, required: true},
+    mobile: {type: String, required: true},
+    posted_by: {type: String, required: true},
+    sale_type: {type: String, required: true},
+    featured_package: {type: String, required: true},
+    PPD_package: {type: String, required: true},
+    property_type: {type: String, required: true},
+    price: {type: String, required: true},
+    property_age: {type: Number, required: true},
+    property_description: {type: String, required: true},
+    negotiable: {type: Boolean, required: true},
+    ownership: {type: String, required: true},
+    property_approved: {type: Boolean, required: true},
+    bank_loan: {type: Boolean, required: true}
+})
+
+module.exports = mongoose.model("EverythingInOneSchema", EverythingInOneSchema);
