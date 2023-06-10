@@ -1,11 +1,11 @@
 import React from "react";
 import "../Styles/InfoHeader.css";
-import Navbar from "./Navbar";
+//import Navbar from "./Navbar";
 import "../Styles/PropertyDetails.css";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+//import { Link, useNavigate } from "react-router-dom";
 
-export default function ProppertyDetails(){
+export default function PropertyDetails() {
 
 const [data,setData]=useState({
     length: "",
@@ -21,13 +21,12 @@ const [data,setData]=useState({
     lift: "",
     electricity: "",
     facing: "",
+    
   })
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("PROPERTY_DETAILS", JSON.stringify(data));
-    navigate("/generalinfo");
-    console.log(data);
+   
   };
 
 return(
@@ -74,8 +73,12 @@ return(
       </span>
     </div>
   </div>
+
+  <div id="formContainer">
+          
+  </div>
     </div>
     </>
-)
+);
 
 }
