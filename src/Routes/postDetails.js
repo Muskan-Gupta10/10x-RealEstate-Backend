@@ -54,9 +54,9 @@ postDetails.post("/uploadDetails", async (req, res) => {
     }
 })
 
-postDetails.get("/getDetailsOfBasicInfo", async (req, res) => {
+postDetails.get("/getAll", async (req, res) => {
     try {
-        await basicInfoModel.find({}).then(data => {
+        await CompletePropertyDataOfUser.find({}).then(data => {
             res.status(200).json({
                 message: "Data fetched Successfully",
                 data: data 
