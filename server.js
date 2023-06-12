@@ -6,6 +6,7 @@ const app = express()
 const mongoose = require("mongoose")
 const port = 8081;
 let postDetails = require("./src/Routes/postDetails.js");
+let addProperty = require("./src/Routes/AddProperty.js");
 
 dotenv.config()
 app.use(express.json());
@@ -21,7 +22,7 @@ mongoose.connect("mongodb+srv://group14realestate:8wpkikXkfu3I3GHJ@cluster0.pqsu
 })
 
 app.use("/postDetails", postDetails);
-
+app.use("/addProperty", addProperty);
 app.use((req, res) => {
     console.log(req.path);
     res.send("You have not requested for any path so I am showing you the default send");
