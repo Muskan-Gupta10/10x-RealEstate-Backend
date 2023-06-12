@@ -1,9 +1,9 @@
 let express = require("express");
 let mongoose = require("mongoose");
-let EverythingInOneSchema = require("../Schema/EverythingInOneSchema");
+let FinalSchema = require("../Schema/FinalSchema");
 let router = express.Router();
 
-let PropertyModel = mongoose.model("EverythingInOneSchema");
+let PropertyModel = mongoose.model("FinalSchema");
 
 router.post("/addProperty", async (req, res) => {
   console.log(req.body);
@@ -27,7 +27,7 @@ router.post("/addProperty", async (req, res) => {
       posted_by: data.posted_by,
       sale_type: data.sale_type,
       featured_package: data.featured_package,
-      PPD_package: data.PPD_package,
+      ppd_package: data.ppd_package,
       email: data.email,
       area: data.area,
       address: data.address,
@@ -53,7 +53,6 @@ router.post("/addProperty", async (req, res) => {
       messege: err
     });
   }
-  // res.send("Inside Add Property");
 });
 
 module.exports = router;

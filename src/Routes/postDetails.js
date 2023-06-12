@@ -1,8 +1,8 @@
 let express = require("express");
 let mongoose = require("mongoose");
-let EverythingInOneSchema = require("../Schema/EverythingInOneSchema");
+let FinalSchema = require("../Schema/FinalSchema");
 
-let CompletePropertyDataOfUser = mongoose.model("EverythingInOneSchema")
+let CompletePropertyDataOfUser = mongoose.model("FinalSchema")
 
 let postDetails = express.Router();
 
@@ -27,7 +27,7 @@ postDetails.post("/uploadDetails", async (req, res) => {
             posted_by: data.posted_by,
             sale_type: data.sale_type,
             featured_package: data.featured_package,
-            PPD_package: data.PPD_package,
+            ppd_package: data.ppd_package,
             email: data.email,
             area: data.area,
             address: data.address,

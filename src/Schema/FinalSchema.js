@@ -1,6 +1,6 @@
 let mongoose = require("mongoose");
 
-let EverythingInOneSchema = mongoose.Schema({
+let FinalSchema = mongoose.Schema({
     length: {type: String, required: true},
     total_area: {type: String, required: true},
     no_of_bhk: {type: String, required: true},
@@ -26,7 +26,7 @@ let EverythingInOneSchema = mongoose.Schema({
     posted_by: {type: String, required: true},
     sale_type: {type: String, required: true},
     featured_package: {type: String, required: true},
-    PPD_package: {type: String, required: true},
+    ppd_package: {type: String, required: true},
     property_type: {type: String, required: true},
     price: {type: String, required: true},
     property_age: {type: String, required: true},
@@ -37,4 +37,4 @@ let EverythingInOneSchema = mongoose.Schema({
     bank_loan: {type: String, required: true}
 })
 
-module.exports = mongoose.model("EverythingInOneSchema", EverythingInOneSchema);
+module.exports = mongoose.model("FinalSchema", FinalSchema);
