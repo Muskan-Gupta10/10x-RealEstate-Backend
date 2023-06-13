@@ -7,6 +7,7 @@ const mongoose = require("mongoose")
 const port = 8081;
 let postDetails = require("./src/Routes/postDetails.js");
 let addProperty = require("./src/Routes/AddProperty.js");
+const signupLoginRoute = require("./src/Routes/signupLoginRoute.js");
 
 dotenv.config()
 app.use(express.json());
@@ -23,6 +24,8 @@ mongoose.connect("mongodb+srv://group14realestate:1iISUnZbRqNOYbhS@cluster0.nrce
 
 app.use("/postDetails", postDetails);
 app.use("/addProperty", addProperty);
+app.use("/signupLoginRoute", signupLoginRoute);
+
 app.use((req, res) => {
     console.log(req.path);
     res.send("You have not requested for any path so I am showing you the default send");

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
-const sequencing = require("../config/sequencing");
+const sequencing = require("./sequencing");
 
 const signupSchema = new mongoose.Schema({
   _id: Number,
