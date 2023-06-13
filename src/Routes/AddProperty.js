@@ -55,4 +55,25 @@ router.post("/addProperty", async (req, res) => {
   }
 });
 
+router.put("/:id", (req, res) => {
+  let datatToUpdate = req.body;
+  let idToFind = req.params.id;
+  PropertyModel.findOneAndReplace({mobile: idToFind}, datatToUpdate, { new: true})
+  .then((updatedPost) => {
+      if(!updatedPost) {
+          return res.status(404).send({
+              message: "Are you mad!!!! I told you to keep the name Same"
+          })
+      }
+
+      res.status(200).json({
+          message: "Data updated Successfully",
+          data: updatedPost
+      })
+  }) 
+  .catch((err) => {
+    res.send("Error While Sending");
+  })
+})
+
 module.exports = router;
