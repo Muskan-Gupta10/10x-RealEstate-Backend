@@ -9,7 +9,7 @@ router.post("/addProperty", async (req, res) => {
   console.log(req.body);
   let data = req.body;
   try {
-    await PropertyModel.create({
+    const newProperty = new PropertyModel({
       length: data.length,
       total_area: data.total_area,
       no_of_bhk: data.no_of_bhk,
@@ -44,36 +44,39 @@ router.post("/addProperty", async (req, res) => {
       ownership: data.ownership,
       property_approved: data.property_approved,
       bank_loan: data.bank_loan,
+      image: data.image,
     });
+
+    await newProperty.save();
     res.header("Access-Control-Allow-Origin", "*");
     res.send(data);
   } catch (err) {
-    console.log(err);
-    res.json({
-      messege: err
-    });
+    console.error(err);
+    res.status(500).send("Error saving property data");
   }
 });
 
 router.put("/:id", (req, res) => {
   let datatToUpdate = req.body;
   let idToFind = req.params.id;
-  PropertyModel.findOneAndReplace({mobile: idToFind}, datatToUpdate, { new: true})
-  .then((updatedPost) => {
-      if(!updatedPost) {
-          return res.status(404).send({
-              message: "Are you mad!!!! I told you to keep the name Same"
-          })
+  PropertyModel.findOneAndReplace({ mobile: idToFind }, datatToUpdate, {
+    new: true,
+  })
+    .then((updatedPost) => {
+      if (!updatedPost) {
+        return res.status(404).send({
+          message: "Are you mad!!!! I told you to keep the name Same",
+        });
       }
 
       res.status(200).json({
-          message: "Data updated Successfully",
-          data: updatedPost
-      })
-  }) 
-  .catch((err) => {
-    res.send("Error While Sending");
-  })
-})
+        message: "Data updated Successfully",
+        data: updatedPost,
+      });
+    })
+    .catch((err) => {
+      res.send("Error While Sending");
+    });
+});
 
 module.exports = router;
