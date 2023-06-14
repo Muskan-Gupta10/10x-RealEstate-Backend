@@ -68,5 +68,4 @@ postDetails.get("/getAll", async (req, res) => {
     }
 })
 
-
 module.exports = postDetails;
