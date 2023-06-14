@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const jwt = require("jsonwebtoken");
 require("dotenv").config()
-const SC_KEY=process.env.SC_KEY;
+const SC_KEY="ryry";
 
 router.post("/login", (req, res) => {
   signupModal
