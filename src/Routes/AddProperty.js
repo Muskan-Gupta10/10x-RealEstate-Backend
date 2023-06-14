@@ -44,6 +44,7 @@ router.post("/addProperty", async (req, res) => {
       ownership: data.ownership,
       property_approved: data.property_approved,
       bank_loan: data.bank_loan,
+      image: data.image,
     });
     res.header("Access-Control-Allow-Origin", "*");
     res.send(data);

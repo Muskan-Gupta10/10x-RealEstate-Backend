@@ -34,7 +34,8 @@ let FinalSchema = mongoose.Schema({
     negotiable: {type: String, required: true},
     ownership: {type: String, required: true},
     property_approved: {type: String, required: true},
-    bank_loan: {type: String, required: true}
+    bank_loan: {type: String, required: true},
+    image: {type: String, required: true}
 })
 
 module.exports = mongoose.model("FinalSchema", FinalSchema);
