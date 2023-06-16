@@ -3,12 +3,15 @@ const signupModal = require("../Schema/signupSchema");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
+let mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 require("dotenv").config()
 const SC_KEY="ryry";
 
+let signup = mongoose.model("signupSchema")
+
 router.post("/login", (req, res) => {
-  signupModal
+  signup
     .find({ email: req.body.email })
     .then((data) => {
       if (!data.length) {
