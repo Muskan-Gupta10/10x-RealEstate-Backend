@@ -15,7 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-mongoose.connect("mongodb+srv://group14realestate:1iISUnZbRqNOYbhS@cluster0.nrceprj.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://muskan:7BSLWjbjmplwuYFw@cluster0.s0y4mye.mongodb.net/RealEstateDB?retryWrites=true&w=majority")
 .then((res) => {
     console.log("Connected to MongoDb Server");
 }).catch((err) => {
